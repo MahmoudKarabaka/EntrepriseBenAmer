@@ -1,0 +1,49 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgC1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="900" fill="url(#bgC1)"/>
+  
+  <!-- Atelier de confection -->
+  <g transform="translate(150, 150)">
+    <!-- Établi -->
+    <rect x="0" y="400" width="900" height="300" fill="#2a2a3a" rx="10"/>
+    <rect x="50" y="420" width="800" height="260" fill="#1a1a1a"/>
+    
+    <!-- Outils -->
+    <rect x="100" y="300" width="150" height="100" fill="#3a3a4a" rx="5" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="110" y="310" width="130" height="20" fill="#00d4ff" opacity="0.3"/>
+    <text x="175" y="325" fill="#00d4ff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">OUTILLAGE</text>
+    
+    <!-- Pièces en fabrication -->
+    <rect x="400" y="450" width="200" height="80" fill="#4a4a5a" rx="5" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="500" cy="490" r="20" fill="#3a3a4a" stroke="#00d4ff" stroke-width="1"/>
+    <rect x="480" y="480" width="40" height="20" fill="#2a2a2a" rx="3"/>
+    
+    <!-- Machine de mesure -->
+    <rect x="700" y="350" width="200" height="150" fill="#3a3a4a" rx="5" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="710" y="360" width="180" height="25" fill="#00d4ff" opacity="0.3"/>
+    <text x="800" y="378" fill="#00d4ff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">MESURE</text>
+    <circle cx="800" cy="420" r="30" fill="#1a1a1a" stroke="#00d4ff" stroke-width="2"/>
+    <line x1="770" y1="420" x2="830" y2="420" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="800" y1="390" x2="800" y2="450" stroke="#00d4ff" stroke-width="1"/>
+    
+    <!-- Lumières d'atelier -->
+    <circle cx="500" cy="200" r="10" fill="#00d4ff" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="200" r="10" fill="#00d4ff" opacity="0.7">
+      <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Texte -->
+  <text x="600" y="750" fill="#00d4ff" font-family="Arial" font-size="32" font-weight="bold" text-anchor="middle">CONFECTION SUR MESURE</text>
+  <text x="600" y="800" fill="#ffffff" font-family="Arial" font-size="18" text-anchor="middle" opacity="0.8">Fabrication de pièces selon vos spécifications</text>
+</svg>
+
+

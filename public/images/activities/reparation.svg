@@ -1,0 +1,17 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgR)"/>
+  <g transform="translate(200, 200)">
+    <path d="M -60,-40 L 60,-40 L 80,40 L -80,40 Z" fill="#ff6600" opacity="0.2"/>
+    <circle cx="-30" cy="0" r="15" fill="#ff6600" opacity="0.6"/>
+    <circle cx="30" cy="0" r="15" fill="#ff6600" opacity="0.6"/>
+    <line x1="-60" y1="-40" x2="60" y2="40" stroke="#ff6600" stroke-width="2" opacity="0.5"/>
+    <text x="0" y="120" fill="#ff6600" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">RÉPARATION</text>
+  </g>
+</svg>
+

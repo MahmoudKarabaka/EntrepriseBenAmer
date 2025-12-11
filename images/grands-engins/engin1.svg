@@ -1,0 +1,50 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgE1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="900" fill="url(#bgE1)"/>
+  
+  <!-- Pelle mécanique -->
+  <g transform="translate(200, 100)">
+    <!-- Châssis -->
+    <rect x="200" y="500" width="400" height="150" fill="#3a3a4a" rx="10"/>
+    <rect x="220" y="520" width="360" height="110" fill="#2a2a2a"/>
+    
+    <!-- Cabine -->
+    <rect x="300" y="400" width="200" height="120" fill="#4a4a5a" rx="5" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="310" y="410" width="180" height="100" fill="#1a1a1a"/>
+    <rect x="320" y="420" width="40" height="30" fill="#00d4ff" opacity="0.3"/>
+    <rect x="370" y="420" width="40" height="30" fill="#00d4ff" opacity="0.3"/>
+    
+    <!-- Bras principal -->
+    <rect x="380" y="300" width="40" height="200" fill="#4a4a5a" rx="5"/>
+    <rect x="390" y="310" width="20" height="180" fill="#2a2a2a"/>
+    
+    <!-- Bras secondaire -->
+    <rect x="400" y="200" width="30" height="120" fill="#4a4a5a" rx="5" transform="rotate(-30 415 260)"/>
+    
+    <!-- Godet -->
+    <path d="M 420 180 L 480 180 L 500 220 L 480 260 L 420 260 Z" fill="#5a5a6a" stroke="#00d4ff" stroke-width="2"/>
+    <path d="M 430 190 L 470 190 L 485 215 L 470 250 L 430 250 Z" fill="#2a2a2a"/>
+    
+    <!-- Roues -->
+    <circle cx="300" cy="650" r="50" fill="#3a3a4a" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="300" cy="650" r="35" fill="#1a1a1a"/>
+    <circle cx="500" cy="650" r="50" fill="#3a3a4a" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="500" cy="650" r="35" fill="#1a1a1a"/>
+    
+    <!-- Zone de modification -->
+    <rect x="250" y="550" width="100" height="50" fill="#ffaa00" opacity="0.3" stroke="#ffaa00" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="300" y="580" fill="#ffaa00" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">MODIF</text>
+  </g>
+  
+  <!-- Texte -->
+  <text x="600" y="800" fill="#00d4ff" font-family="Arial" font-size="32" font-weight="bold" text-anchor="middle">MODIFICATION GRANDS ENGINS</text>
+  <text x="600" y="850" fill="#ffffff" font-family="Arial" font-size="18" text-anchor="middle" opacity="0.8">Adaptation et modification de matériel lourd</text>
+</svg>
+
+

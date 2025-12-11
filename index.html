@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entreprise Ben Amer de tournage - Services professionnels de tournage et usinage">
+    <title>Entreprise Ben Amer de Tournage</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Canvas pour les particules animées -->
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="images/logo/logo-white.svg" alt="Ben Amer Tournage" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display: none;">
+                        <div class="logo-icon">
+                            <i class="fas fa-cog"></i>
+                            <div class="logo-glow"></div>
+                        </div>
+                        <span class="logo-text">Ben Amer <span class="tech-text">Tournage</span></span>
+                    </div>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#galerie" class="nav-link">Galerie</a></li>
+                    <li><a href="#apropos" class="nav-link">À Propos</a></li>
+                    <li><a href="#tiktok" class="nav-link">TikTok</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero / Accueil -->
+    <section id="accueil" class="hero">
+        <!-- Vidéo en arrière-plan -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="videos/background-video.mp4" type="video/mp4">
+            <source src="videos/background-video.webm" type="video/webm">
+            <!-- Fallback si la vidéo ne charge pas -->
+        </video>
+        <div class="hero-grid-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-glow-effect"></div>
+        <div class="hero-content">
+            <div class="tech-badge">TECHNOLOGIE DE PRÉCISION</div>
+            <h1 class="hero-title">
+                <span class="title-line">Entreprise Ben Amer</span>
+                <span class="title-line tech-gradient">de Tournage</span>
+            </h1>
+            <p class="hero-subtitle">Excellence en usinage et tournage de précision</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary tech-btn">
+                    <span>Nos Services</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#contact" class="btn btn-secondary tech-btn">
+                    <span>Contactez-nous</span>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Nos Services</h2>
+            <p class="section-subtitle">Des solutions complètes en tournage et usinage</p>
+            <div class="services-grid">
+                <div class="service-card" data-category="tournage">
+                    <div class="service-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Tournage</h3>
+                    <p>Tournage de précision sur machines à commande numérique pour tous types de pièces métalliques.</p>
+                </div>
+                <div class="service-card" data-category="fraisage">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Fraisage</h3>
+                    <p>Fraisage de précision pour la réalisation de pièces complexes et sur mesure.</p>
+                </div>
+                <div class="service-card" data-category="soudure">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Soudure</h3>
+                    <p>Services de soudure professionnels pour l'assemblage et la réparation de structures métalliques.</p>
+                </div>
+                <div class="service-card" data-category="confection-reparation">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Confection & Réparation</h3>
+                    <p>Fabrication et réparation de pièces industrielles selon vos besoins spécifiques.</p>
+                </div>
+                <div class="service-card" data-category="grands-engins">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Modification Grands Engins</h3>
+                    <p>Modification et adaptation de grands engins et véhicules industriels sur mesure.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Contrôle Qualité</h3>
+                    <p>Vérification rigoureuse de chaque pièce pour garantir la précision et la qualité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Galerie -->
+    <section id="galerie" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galerie</h2>
+            <p class="section-subtitle">Découvrez nos réalisations</p>
+            
+            <!-- Filtres de catégories -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Tous
+                </button>
+                <button class="filter-btn" data-filter="tournage">
+                    <i class="fas fa-cog"></i> Tournage
+                </button>
+                <button class="filter-btn" data-filter="fraisage">
+                    <i class="fas fa-tools"></i> Fraisage
+                </button>
+                <button class="filter-btn" data-filter="soudure">
+                    <i class="fas fa-fire"></i> Soudure
+                </button>
+                <button class="filter-btn" data-filter="confection-reparation">
+                    <i class="fas fa-wrench"></i> Confection & Réparation
+                </button>
+                <button class="filter-btn" data-filter="grands-engins">
+                    <i class="fas fa-truck"></i> Grands Engins
+                </button>
+            </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- TOURNAGE -->
+                <div class="gallery-item" data-category="tournage" data-image="images/tournage/tournage1">
+                    <img src="images/tournage/tournage1.jpg" alt="Tournage - Pièce 1" 
+                         onerror="this.onerror=null; this.src='images/tournage/tournage1.png'; this.onerror=function(){this.onerror=null; this.src='images/tournage/tournage1.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-cog"></i>
+                        <p>Tournage 1</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Tournage</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="tournage" data-image="images/tournage/tournage2.svg">
+                    <img src="images/tournage/tournage2.svg" alt="Tournage - Pièce 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-cog"></i>
+                        <p>Tournage 2</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Tournage</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="tournage" data-image="images/tournage/tournage3">
+                    <img src="images/tournage/tournage3.jpg" alt="Tournage - Pièce 3" 
+                         onerror="this.onerror=null; this.src='images/tournage/tournage3.png'; this.onerror=function(){this.onerror=null; this.src='images/tournage/tournage3.webp'; this.onerror=function(){this.onerror=null; this.src='images/tournage/tournage3.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-cog"></i>
+                        <p>Tournage 3</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Tournage</span>
+                    </div>
+                </div>
+                
+                <!-- FRAISAGE -->
+                <div class="gallery-item" data-category="fraisage" data-image="images/fraisage/fraisage1">
+                    <img src="images/fraisage/fraisage1.jpg" alt="Fraisage - Pièce 1" 
+                         onerror="this.onerror=null; this.src='images/fraisage/fraisage1.png'; this.onerror=function(){this.onerror=null; this.src='images/fraisage/fraisage1.webp'; this.onerror=function(){this.onerror=null; this.src='images/fraisage/fraisage1.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-tools"></i>
+                        <p>Fraisage 1</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Fraisage</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fraisage" data-image="images/fraisage/fraisage2">
+                    <img src="images/fraisage/fraisage2.jpg" alt="Fraisage - Pièce 2" 
+                         onerror="this.onerror=null; this.src='images/fraisage/fraisage2.png'; this.onerror=function(){this.onerror=null; this.src='images/fraisage/fraisage2.webp'; this.onerror=function(){this.onerror=null; this.src='images/fraisage/fraisage2.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-tools"></i>
+                        <p>Fraisage 2</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Fraisage</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fraisage" data-image="images/fraisage/fraisage3">
+                    <img src="images/fraisage/fraisage3.jpg" alt="Fraisage - Pièce 3" 
+                         onerror="this.onerror=null; this.src='images/fraisage/fraisage3.png'; this.onerror=function(){this.onerror=null; this.src='images/fraisage/fraisage3.webp'; this.onerror=function(){this.onerror=null; this.src='images/fraisage/fraisage3.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-tools"></i>
+                        <p>Fraisage 3</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Fraisage</span>
+                    </div>
+                </div>
+                
+                <!-- SOUDURE -->
+                <div class="gallery-item" data-category="soudure" data-image="images/soudure/soudure1">
+                    <img src="images/soudure/soudure1.jpg" alt="Soudure - Réalisation 1" 
+                         onerror="this.onerror=null; this.src='images/soudure/soudure1.png'; this.onerror=function(){this.onerror=null; this.src='images/soudure/soudure1.webp'; this.onerror=function(){this.onerror=null; this.src='images/soudure/soudure1.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-fire"></i>
+                        <p>Soudure 1</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Soudure</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="soudure" data-image="images/soudure/soudure2">
+                    <img src="images/soudure/soudure2.jpg" alt="Soudure - Réalisation 2" 
+                         onerror="this.onerror=null; this.src='images/soudure/soudure2.png'; this.onerror=function(){this.onerror=null; this.src='images/soudure/soudure2.webp'; this.onerror=function(){this.onerror=null; this.src='images/soudure/soudure2.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-fire"></i>
+                        <p>Soudure 2</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Soudure</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="soudure" data-image="images/soudure/soudure3">
+                    <img src="images/soudure/soudure3.jpg" alt="Soudure - Réalisation 3" 
+                         onerror="this.onerror=null; this.src='images/soudure/soudure3.png'; this.onerror=function(){this.onerror=null; this.src='images/soudure/soudure3.webp'; this.onerror=function(){this.onerror=null; this.src='images/soudure/soudure3.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-fire"></i>
+                        <p>Soudure 3</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Soudure</span>
+                    </div>
+                </div>
+                
+                <!-- CONFECTION & RÉPARATION -->
+                <div class="gallery-item" data-category="confection-reparation" data-image="images/confection-reparation/confection1">
+                    <img src="images/confection-reparation/confection1.jpg" alt="Confection & Réparation - Projet 1" 
+                         onerror="this.onerror=null; this.src='images/confection-reparation/confection1.png'; this.onerror=function(){this.onerror=null; this.src='images/confection-reparation/confection1.webp'; this.onerror=function(){this.onerror=null; this.src='images/confection-reparation/confection1.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-wrench"></i>
+                        <p>Confection 1</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Confection & Réparation</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="confection-reparation" data-image="images/confection-reparation/confection2">
+                    <img src="images/confection-reparation/confection2.jpg" alt="Confection & Réparation - Projet 2" 
+                         onerror="this.onerror=null; this.src='images/confection-reparation/confection2.png'; this.onerror=function(){this.onerror=null; this.src='images/confection-reparation/confection2.webp'; this.onerror=function(){this.onerror=null; this.src='images/confection-reparation/confection2.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-wrench"></i>
+                        <p>Confection 2</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Confection & Réparation</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="confection-reparation" data-image="images/confection-reparation/confection3">
+                    <img src="images/confection-reparation/confection3.jpg" alt="Confection & Réparation - Projet 3" 
+                         onerror="this.onerror=null; this.src='images/confection-reparation/confection3.png'; this.onerror=function(){this.onerror=null; this.src='images/confection-reparation/confection3.webp'; this.onerror=function(){this.onerror=null; this.src='images/confection-reparation/confection3.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-wrench"></i>
+                        <p>Confection 3</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Confection & Réparation</span>
+                    </div>
+                </div>
+                
+                <!-- GRANDS ENGINS -->
+                <div class="gallery-item" data-category="grands-engins" data-image="images/grands-engins/engin1">
+                    <img src="images/grands-engins/engin1.jpg" alt="Modification Grand Engin 1" 
+                         onerror="this.onerror=null; this.src='images/grands-engins/engin1.png'; this.onerror=function(){this.onerror=null; this.src='images/grands-engins/engin1.webp'; this.onerror=function(){this.onerror=null; this.src='images/grands-engins/engin1.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-truck"></i>
+                        <p>Grand Engin 1</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Grands Engins</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="grands-engins" data-image="images/grands-engins/engin2">
+                    <img src="images/grands-engins/engin2.jpg" alt="Modification Grand Engin 2" 
+                         onerror="this.onerror=null; this.src='images/grands-engins/engin2.png'; this.onerror=function(){this.onerror=null; this.src='images/grands-engins/engin2.webp'; this.onerror=function(){this.onerror=null; this.src='images/grands-engins/engin2.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-truck"></i>
+                        <p>Grand Engin 2</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Grands Engins</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="grands-engins" data-image="images/grands-engins/engin3">
+                    <img src="images/grands-engins/engin3.jpg" alt="Modification Grand Engin 3" 
+                         onerror="this.onerror=null; this.src='images/grands-engins/engin3.png'; this.onerror=function(){this.onerror=null; this.src='images/grands-engins/engin3.webp'; this.onerror=function(){this.onerror=null; this.src='images/grands-engins/engin3.svg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};};">
+                    <div class="gallery-placeholder" style="display: none;">
+                        <i class="fas fa-truck"></i>
+                        <p>Grand Engin 3</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span class="gallery-category">Grands Engins</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">À Propos de Nous</h2>
+                    <p>L'Entreprise Ben Amer de Tournage est spécialisée dans le tournage et l'usinage de précision. Avec des années d'expérience dans le domaine, nous offrons des services de haute qualité pour répondre aux besoins de nos clients industriels.</p>
+                    <p>Notre équipe expérimentée utilise des équipements modernes et des techniques avancées pour garantir la précision et la qualité de chaque pièce produite.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-label">Années d'expérience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="500">0</div>
+                            <div class="stat-label">Projets réalisés</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">Clients satisfaits</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about/about-image.jpg" alt="Entreprise Ben Amer de Tournage" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="about-placeholder" style="display: none;">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section TikTok -->
+    <section id="tiktok" class="tiktok-section">
+        <div class="container">
+            <h2 class="section-title">Suivez-nous sur TikTok</h2>
+            <p class="section-subtitle">Découvrez nos vidéos et notre travail en action</p>
+            <div class="tiktok-content">
+                <div class="tiktok-card">
+                    <div class="tiktok-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>@enterprise.tourneu</h3>
+                    <p>Suivez notre compte TikTok pour voir nos réalisations, nos processus de fabrication et bien plus encore !</p>
+                    <a href="https://www.tiktok.com/@enterprise.tourneu?_r=1&_t=ZM-9272f7Naa" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok">
+                        <i class="fab fa-tiktok"></i> Visiter notre TikTok
+                    </a>
+                </div>
+                <div class="tiktok-embed">
+                    <div class="tiktok-embed-placeholder">
+                        <i class="fab fa-tiktok"></i>
+                        <p>Contenu TikTok</p>
+                        <small>Les vidéos TikTok s'afficheront ici</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <p class="section-subtitle">N'hésitez pas à nous contacter pour vos projets</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>+216 98 800 957</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>contact@benamertournage.fr</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Adresse</h4>
+                            <p>Votre adresse ici</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>TikTok</h4>
+                            <a href="https://www.tiktok.com/@enterprise.tourneu?_r=1&_t=ZM-9272f7Naa" target="_blank" rel="noopener noreferrer">@enterprise.tourneu</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Votre téléphone">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/logo/logo-white.svg" alt="Ben Amer Tournage" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h3 style="display: none;">Ben Amer Tournage</h3>
+                    <p>Excellence en usinage et tournage de précision</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@enterprise.tourneu?_r=1&_t=ZM-9272f7Naa" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Entreprise Ben Amer de Tournage. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal pour les images de la galerie -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImage" src="" alt="Image agrandie">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

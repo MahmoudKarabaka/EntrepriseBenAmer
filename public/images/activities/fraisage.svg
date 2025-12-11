@@ -1,0 +1,16 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgF)"/>
+  <g transform="translate(200, 200)">
+    <rect x="-80" y="-80" width="160" height="160" fill="none" stroke="#ff6600" stroke-width="3" opacity="0.6" rx="10"/>
+    <rect x="-60" y="-60" width="120" height="120" fill="#ff6600" opacity="0.1" rx="8"/>
+    <circle r="30" fill="#ff6600" opacity="0.3"/>
+    <text x="0" y="120" fill="#ff6600" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">FRAISAGE</text>
+  </g>
+</svg>
+

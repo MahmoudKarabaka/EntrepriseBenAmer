@@ -1,0 +1,25 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond -->
+  <rect width="64" height="64" rx="8" fill="url(#bgFav)"/>
+  
+  <!-- Engrenages simplifiés -->
+  <g transform="translate(32, 20)">
+    <circle cx="-8" cy="-6" r="6" fill="white" opacity="0.9"/>
+    <circle cx="8" cy="0" r="5" fill="white" opacity="0.9"/>
+    <circle cx="-4" cy="8" r="4" fill="white" opacity="0.9"/>
+  </g>
+  
+  <!-- Lettre T stylisée -->
+  <text x="32" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#ff6600" text-anchor="middle">
+    T
+  </text>
+</svg>
+
+

@@ -1,0 +1,57 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="metal2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d0d0d0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f0f0f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b0b0b0;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  
+  <!-- Pièce usinée en détail -->
+  <g transform="translate(400, 150)">
+    <!-- Pièce cylindrique -->
+    <ellipse cx="200" cy="300" rx="120" ry="80" fill="url(#metal2)" opacity="0.9"/>
+    <ellipse cx="200" cy="300" rx="100" ry="70" fill="#3a3a4a"/>
+    <ellipse cx="200" cy="300" rx="80" ry="60" fill="url(#metal2)"/>
+    
+    <!-- Détails de la pièce -->
+    <circle cx="200" cy="300" r="50" fill="none" stroke="#00d4ff" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="150" y1="300" x2="250" y2="300" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+    <line x1="200" y1="250" x2="200" y2="350" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Reflets métalliques -->
+    <ellipse cx="180" cy="280" rx="30" ry="20" fill="#ffffff" opacity="0.3"/>
+    <ellipse cx="220" cy="320" rx="20" ry="15" fill="#ffffff" opacity="0.2"/>
+    
+    <!-- Support -->
+    <rect x="100" y="380" width="200" height="20" fill="#2a2a3a" rx="5"/>
+    <rect x="110" y="390" width="180" height="10" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- Mesure de précision -->
+  <g transform="translate(600, 200)">
+    <line x1="0" y1="0" x2="0" y2="400" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="#00d4ff" stroke-width="2"/>
+    <line x1="-10" y1="200" x2="10" y2="200" stroke="#00d4ff" stroke-width="2"/>
+    <line x1="-10" y1="400" x2="10" y2="400" stroke="#00d4ff" stroke-width="2"/>
+    <text x="20" y="15" fill="#00d4ff" font-family="Arial" font-size="16" font-weight="bold">Ø 160mm</text>
+    <text x="20" y="215" fill="#00d4ff" font-family="Arial" font-size="16" font-weight="bold">Ø 140mm</text>
+    <text x="20" y="415" fill="#00d4ff" font-family="Arial" font-size="16" font-weight="bold">Ø 100mm</text>
+  </g>
+  
+  <!-- Texte -->
+  <text x="600" y="750" fill="#00d4ff" font-family="Arial" font-size="32" font-weight="bold" text-anchor="middle">PRÉCISION MILLIMÉTRIQUE</text>
+  <text x="600" y="800" fill="#ffffff" font-family="Arial" font-size="18" text-anchor="middle" opacity="0.8">Contrôle qualité et mesure de précision</text>
+</svg>
+
+

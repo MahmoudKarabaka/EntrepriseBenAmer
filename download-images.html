@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Télécharger des Images depuis le Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        select, input[type="url"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus, input[type="url"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .result.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .info-box h3 {
+            color: #1976D2;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .info-box p {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .preview {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .preview img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📥 Télécharger des Images</h1>
+        <p class="subtitle">Importez des images depuis le web vers votre site</p>
+        
+        <div class="info-box">
+            <h3>ℹ️ Instructions</h3>
+            <p>1. Choisissez une catégorie et un fichier<br>
+            2. Collez l'URL de l'image (doit être une URL directe vers l'image)<br>
+            3. Cliquez sur "Télécharger"<br>
+            4. L'image sera automatiquement intégrée au site</p>
+        </div>
+        
+        <form id="downloadForm">
+            <div class="form-group">
+                <label for="category">Catégorie:</label>
+                <select id="category" required>
+                    <option value="">-- Choisissez une catégorie --</option>
+                    <option value="tournage">Tournage</option>
+                    <option value="fraisage">Fraisage</option>
+                    <option value="soudure">Soudure</option>
+                    <option value="confection-reparation">Confection & Réparation</option>
+                    <option value="grands-engins">Grands Engins</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="fileNumber">Fichier à remplacer:</label>
+                <select id="fileNumber" required disabled>
+                    <option value="">-- Choisissez d'abord une catégorie --</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="imageUrl">URL de l'image:</label>
+                <input type="url" id="imageUrl" placeholder="https://exemple.com/image.jpg" required>
+                <small style="color: #666; font-size: 12px; display: block; margin-top: 5px;">
+                    L'URL doit pointer directement vers une image (jpg, png, webp)
+                </small>
+            </div>
+            
+            <button type="submit" class="btn" id="downloadBtn">
+                📥 Télécharger l'Image
+            </button>
+        </form>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 10px; color: #666;">Téléchargement en cours...</p>
+        </div>
+        
+        <div class="result" id="result"></div>
+        
+        <div class="preview" id="preview"></div>
+    </div>
+    
+    <script>
+        const categories = {
+            'tournage': ['tournage1', 'tournage2', 'tournage3'],
+            'fraisage': ['fraisage1', 'fraisage2', 'fraisage3'],
+            'soudure': ['soudure1', 'soudure2', 'soudure3'],
+            'confection-reparation': ['confection1', 'confection2', 'confection3'],
+            'grands-engins': ['engin1', 'engin2', 'engin3']
+        };
+        
+        const categorySelect = document.getElementById('category');
+        const fileNumberSelect = document.getElementById('fileNumber');
+        const downloadForm = document.getElementById('downloadForm');
+        const loadingDiv = document.getElementById('loading');
+        const resultDiv = document.getElementById('result');
+        const previewDiv = document.getElementById('preview');
+        
+        categorySelect.addEventListener('change', function() {
+            const category = this.value;
+            fileNumberSelect.innerHTML = '<option value="">-- Choisissez un fichier --</option>';
+            
+            if (category && categories[category]) {
+                fileNumberSelect.disabled = false;
+                categories[category].forEach((fileName, index) => {
+                    const option = document.createElement('option');
+                    option.value = index;
+                    option.textContent = fileName;
+                    fileNumberSelect.appendChild(option);
+                });
+            } else {
+                fileNumberSelect.disabled = true;
+            }
+        });
+        
+        downloadForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const category = categorySelect.value;
+            const fileIndex = parseInt(fileNumberSelect.value);
+            const imageUrl = document.getElementById('imageUrl').value;
+            
+            if (!category || fileIndex === null || !imageUrl) {
+                showResult('Veuillez remplir tous les champs', 'error');
+                return;
+            }
+            
+            const fileName = categories[category][fileIndex];
+            const folder = category;
+            
+            // Afficher le chargement
+            loadingDiv.style.display = 'block';
+            resultDiv.style.display = 'none';
+            previewDiv.innerHTML = '';
+            document.getElementById('downloadBtn').disabled = true;
+            
+            try {
+                // Utiliser un proxy CORS ou une API backend
+                // Pour l'instant, on va créer un fichier de configuration
+                const response = await fetch('download-image.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        url: imageUrl,
+                        category: folder,
+                        fileName: fileName
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showResult(`✅ Image téléchargée avec succès!<br>Fichier: ${data.path}`, 'success');
+                    showPreview(imageUrl);
+                } else {
+                    throw new Error('Erreur lors du téléchargement');
+                }
+            } catch (error) {
+                // Si pas de backend, utiliser une méthode alternative
+                showResult(`⚠️ Pour télécharger depuis le web, utilisez le script Python:<br><code>python download-images.py</code><br><br>Ou utilisez un service comme:<br>- <a href="https://www.pexels.com" target="_blank">Pexels</a><br>- <a href="https://unsplash.com" target="_blank">Unsplash</a><br>- <a href="https://pixabay.com" target="_blank">Pixabay</a>`, 'info');
+                showPreview(imageUrl);
+            } finally {
+                loadingDiv.style.display = 'none';
+                document.getElementById('downloadBtn').disabled = false;
+            }
+        });
+        
+        function showResult(message, type) {
+            resultDiv.className = `result ${type}`;
+            resultDiv.innerHTML = message;
+            resultDiv.style.display = 'block';
+        }
+        
+        function showPreview(url) {
+            const img = document.createElement('img');
+            img.src = url;
+            img.onerror = function() {
+                previewDiv.innerHTML = '<p style="color: #999;">Aperçu non disponible</p>';
+            };
+            previewDiv.innerHTML = '';
+            previewDiv.appendChild(img);
+        }
+    </script>
+</body>
+</html>
+
+

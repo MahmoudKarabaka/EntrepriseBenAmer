@@ -1,0 +1,64 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgS2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f1e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="900" fill="url(#bgS2)"/>
+  
+  <!-- Structure soudée -->
+  <g transform="translate(300, 150)">
+    <!-- Poutres -->
+    <rect x="0" y="0" width="600" height="40" fill="#4a4a5a" rx="5"/>
+    <rect x="0" y="200" width="600" height="40" fill="#4a4a5a" rx="5"/>
+    <rect x="0" y="400" width="600" height="40" fill="#4a4a5a" rx="5"/>
+    
+    <!-- Montants verticaux -->
+    <rect x="0" y="0" width="40" height="440" fill="#4a4a5a" rx="5"/>
+    <rect x="280" y="0" width="40" height="440" fill="#4a4a5a" rx="5"/>
+    <rect x="560" y="0" width="40" height="440" fill="#4a4a5a" rx="5"/>
+    
+    <!-- Points de soudure -->
+    <circle cx="20" cy="20" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="20" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="1;0.8;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="580" cy="20" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="20" cy="220" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="1;0.8;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="220" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="580" cy="220" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="1;0.8;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="20" cy="420" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="420" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="1;0.8;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="580" cy="420" r="8" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Renforts diagonaux -->
+    <line x1="40" y1="40" x2="260" y2="200" stroke="#00d4ff" stroke-width="3" opacity="0.6"/>
+    <line x1="320" y1="40" x2="540" y2="200" stroke="#00d4ff" stroke-width="3" opacity="0.6"/>
+    <line x1="40" y1="200" x2="260" y2="400" stroke="#00d4ff" stroke-width="3" opacity="0.6"/>
+    <line x1="320" y1="200" x2="540" y2="400" stroke="#00d4ff" stroke-width="3" opacity="0.6"/>
+  </g>
+  
+  <!-- Texte -->
+  <text x="600" y="750" fill="#ffaa00" font-family="Arial" font-size="32" font-weight="bold" text-anchor="middle">STRUCTURES SOUDÉES</text>
+  <text x="600" y="800" fill="#ffffff" font-family="Arial" font-size="18" text-anchor="middle" opacity="0.8">Fabrication de charpentes et structures métalliques</text>
+</svg>
+
+

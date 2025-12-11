@@ -1,0 +1,51 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgE2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f1e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="900" fill="url(#bgE2)"/>
+  
+  <!-- Camion benne -->
+  <g transform="translate(150, 150)">
+    <!-- Châssis -->
+    <rect x="0" y="400" width="900" height="200" fill="#3a3a4a" rx="10"/>
+    <rect x="50" y="420" width="800" height="160" fill="#2a2a2a"/>
+    
+    <!-- Cabine -->
+    <rect x="50" y="300" width="250" height="120" fill="#4a4a5a" rx="5" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="60" y="310" width="230" height="100" fill="#1a1a1a"/>
+    <rect x="70" y="320" width="50" height="40" fill="#00d4ff" opacity="0.3"/>
+    <rect x="130" y="320" width="50" height="40" fill="#00d4ff" opacity="0.3"/>
+    
+    <!-- Benne -->
+    <path d="M 350 300 L 800 300 L 850 400 L 800 500 L 350 500 Z" fill="#5a5a6a" stroke="#00d4ff" stroke-width="2"/>
+    <path d="M 370 320 L 780 320 L 820 400 L 780 480 L 370 480 Z" fill="#2a2a2a"/>
+    
+    <!-- Renforts -->
+    <rect x="400" y="320" width="20" height="160" fill="#4a4a4a"/>
+    <rect x="600" y="320" width="20" height="160" fill="#4a4a4a"/>
+    
+    <!-- Zone de modification -->
+    <rect x="500" y="350" width="150" height="80" fill="#ffaa00" opacity="0.3" stroke="#ffaa00" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="575" y="395" fill="#ffaa00" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">RENFORCEMENT</text>
+    
+    <!-- Roues -->
+    <circle cx="200" cy="600" r="60" fill="#3a3a4a" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="200" cy="600" r="40" fill="#1a1a1a"/>
+    <circle cx="450" cy="600" r="60" fill="#3a3a4a" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="450" cy="600" r="40" fill="#1a1a1a"/>
+    <circle cx="700" cy="600" r="60" fill="#3a3a4a" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="700" cy="600" r="40" fill="#1a1a1a"/>
+    <circle cx="850" cy="600" r="60" fill="#3a3a4a" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="850" cy="600" r="40" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- Texte -->
+  <text x="600" y="800" fill="#00d4ff" font-family="Arial" font-size="32" font-weight="bold" text-anchor="middle">RENFORCEMENT VÉHICULES</text>
+  <text x="600" y="850" fill="#ffffff" font-family="Arial" font-size="18" text-anchor="middle" opacity="0.8">Renforcement de structures et adaptation sur mesure</text>
+</svg>
+
+

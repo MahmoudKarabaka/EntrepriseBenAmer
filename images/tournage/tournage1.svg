@@ -1,0 +1,75 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c0c0c0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e8e8e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a0a0a0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#bg1)"/>
+  
+  <!-- Machine de tournage -->
+  <g transform="translate(200, 200)">
+    <!-- Base de la machine -->
+    <rect x="0" y="300" width="800" height="200" fill="url(#metal)" rx="10"/>
+    <rect x="50" y="320" width="700" height="160" fill="#2a2a3a" rx="5"/>
+    
+    <!-- Contrôleur CNC -->
+    <rect x="50" y="50" width="200" height="150" fill="#1a1a2e" rx="5" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="60" y="60" width="180" height="30" fill="#00d4ff" opacity="0.3"/>
+    <text x="100" y="80" fill="#00d4ff" font-family="Arial" font-size="14" font-weight="bold">CNC CONTROL</text>
+    <circle cx="120" cy="120" r="8" fill="#00d4ff"/>
+    <circle cx="150" cy="120" r="8" fill="#00d4ff"/>
+    <circle cx="180" cy="120" r="8" fill="#00d4ff"/>
+    
+    <!-- Mandrin -->
+    <circle cx="500" cy="400" r="80" fill="url(#metal)" stroke="#00d4ff" stroke-width="3" filter="url(#glow)"/>
+    <circle cx="500" cy="400" r="60" fill="#2a2a3a"/>
+    <circle cx="500" cy="400" r="40" fill="url(#metal)"/>
+    <!-- Pièce en rotation -->
+    <ellipse cx="500" cy="400" rx="35" ry="25" fill="#4a4a5a" opacity="0.8"/>
+    <line x1="500" y1="365" x2="500" y2="435" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Outil de coupe -->
+    <rect x="650" y="380" width="100" height="40" fill="#3a3a4a" rx="5" transform="rotate(-15 700 400)"/>
+    <polygon points="650,380 700,360 750,380 750,420 700,440 650,420" fill="#5a5a6a" stroke="#00d4ff" stroke-width="1"/>
+    
+    <!-- Étincelles -->
+    <circle cx="720" cy="390" r="3" fill="#ffaa00" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="730" cy="400" r="2" fill="#ff6600" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.1;0.7" dur="0.25s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="715" cy="410" r="2.5" fill="#ffaa00" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="0.35s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Lumières LED -->
+    <circle cx="100" cy="400" r="5" fill="#00d4ff" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="400" r="5" fill="#00d4ff" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Texte -->
+  <text x="600" y="750" fill="#00d4ff" font-family="Arial" font-size="32" font-weight="bold" text-anchor="middle">TOURNAGE CNC DE PRÉCISION</text>
+  <text x="600" y="800" fill="#ffffff" font-family="Arial" font-size="18" text-anchor="middle" opacity="0.8">Usinage de pièces métalliques sur mesure</text>
+</svg>
+
+
