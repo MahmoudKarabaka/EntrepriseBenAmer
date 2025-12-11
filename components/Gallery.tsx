@@ -2,34 +2,50 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { useEffect } from 'react'
 
 const categories = [
   { id: 'all', name: 'Tous', icon: '📷' },
   { id: 'tournage', name: 'Tournage', icon: '⚙️' },
   { id: 'fraisage', name: 'Fraisage', icon: '🔧' },
   { id: 'reparation', name: 'Réparation', icon: '🔨' },
+  { id: 'soudure', name: 'Soudure', icon: '🔥' },
   { id: 'engins', name: 'Grands Engins', icon: '🚛' },
 ]
 
 const galleryItems = [
-  { id: 1, category: 'tournage', image: '/images/activities/tournage-1.jpg', title: 'Tournage CNC' },
-  { id: 2, category: 'tournage', image: '/images/activities/tournage-2.jpg', title: 'Pièce usinée' },
-  { id: 3, category: 'fraisage', image: '/images/activities/fraisage-1.jpg', title: 'Fraisage 5 axes' },
-  { id: 4, category: 'fraisage', image: '/images/activities/fraisage-2.jpg', title: 'Pièce complexe' },
-  { id: 5, category: 'reparation', image: '/images/activities/reparation-1.jpg', title: 'Réparation Caterpillar' },
-  { id: 6, category: 'reparation', image: '/images/activities/reparation-2.jpg', title: 'Pièce reconstruite' },
-  { id: 7, category: 'engins', image: '/images/activities/engin-1.jpg', title: 'Engin Caterpillar' },
-  { id: 8, category: 'engins', image: '/images/activities/engin-2.jpg', title: 'Grand engin' },
-  { id: 9, category: 'tournage', image: '/images/activities/tournage-3.jpg', title: 'Tournage précision' },
+  { id: 1, category: 'tournage', image: '/images/activities/tournage1.jpg', title: 'Tournage CNC' },
+  { id: 2, category: 'tournage', image: '/images/activities/tournage2.jpg', title: 'Pièce usinée' },
+  { id: 3, category: 'fraisage', image: '/images/activities/fraisage1.jpg', title: 'Fraisage 5 axes' },
+  { id: 4, category: 'fraisage', image: '/images/activities/fraisage2.jpg', title: 'Pièce complexe' },
+  { id: 5, category: 'reparation', image: '/images/activities/reparation1.jpg', title: 'Réparation Caterpillar' },
+  { id: 6, category: 'reparation', image: '/images/activities/reparation2.jpg', title: 'Pièce reconstruite' },
+  { id: 7, category: 'engins', image: '/images/activities/engin1.jpg', title: 'Engin Caterpillar' },
+  { id: 8, category: 'engins', image: '/images/activities/engin2.jpg', title: 'Grand engin' },
+  { id: 9, category: 'tournage', image: '/images/activities/tournage3.jpg', title: 'Tournage précision' },
+  { id: 10, category: 'soudure', image: '/images/activities/soudure1.png', title: 'Soudure structurale' },
+  { id: 11, category: 'soudure', image: '/images/activities/soudure2.jpg', title: 'Assemblage métal' },
+  { id: 12, category: 'soudure', image: '/images/activities/soudure3.jpg', title: 'Poste de soudure' },
+  { id: 13, category: 'reparation', image: '/images/activities/reparation3.jpg', title: 'Atelier réparation' },
 ]
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [carouselIndex, setCarouselIndex] = useState(0)
 
   const filteredItems = activeFilter === 'all' 
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeFilter)
+
+  // Carrousel automatique pour la vue "Tous"
+  useEffect(() => {
+    if (activeFilter !== 'all' || galleryItems.length === 0) return
+    const id = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % galleryItems.length)
+    }, 3500)
+    return () => clearInterval(id)
+  }, [activeFilter])
 
   return (
     <section id="galerie" className="py-20 bg-dark-secondary">
@@ -60,6 +76,39 @@ export default function Gallery() {
             </button>
           ))}
         </div>
+
+        {/* Slider défilant sous le filtre "Tous" */}
+        {activeFilter === 'all' && galleryItems.length > 0 && (
+          <div className="relative mb-12 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-xl shadow-primary/20 h-[260px] md:h-[360px] bg-dark">
+            <Image
+              src={galleryItems[carouselIndex].image}
+              alt={galleryItems[carouselIndex].title}
+              fill
+              className="object-cover transition-opacity duration-500"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/30 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+              <div>
+                <p className="text-sm text-primary font-semibold uppercase">
+                  {categories.find(c => c.id === galleryItems[carouselIndex].category)?.name}
+                </p>
+                <h3 className="text-xl font-bold">{galleryItems[carouselIndex].title}</h3>
+              </div>
+              <div className="flex gap-2">
+                {galleryItems.slice(0, 6).map((item, idx) => (
+                  <button
+                    key={item.id}
+                    aria-label={`Aller à ${item.title}`}
+                    className={`h-2 w-2 rounded-full transition-all ${carouselIndex === idx ? 'bg-primary w-4' : 'bg-white/50'}`}
+                    onClick={() => setCarouselIndex(idx)}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Grille d'images */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
