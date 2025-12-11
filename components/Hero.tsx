@@ -7,8 +7,9 @@ export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
+    const canvasEl = canvasRef.current
+    if (!canvasEl) return
+    const canvas = canvasEl
 
     const ctx = canvas.getContext('2d')
     if (!ctx) return
@@ -23,10 +24,12 @@ export default function Hero() {
       speedX: number
       speedY: number
       opacity: number
+      c: HTMLCanvasElement
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+      constructor(c: HTMLCanvasElement) {
+        this.c = c
+        this.x = Math.random() * c.width
+        this.y = Math.random() * c.height
         this.size = Math.random() * 2 + 1
         this.speedX = Math.random() * 1 - 0.5
         this.speedY = Math.random() * 1 - 0.5
@@ -37,10 +40,10 @@ export default function Hero() {
         this.x += this.speedX
         this.y += this.speedY
 
-        if (this.x > canvas.width) this.x = 0
-        if (this.x < 0) this.x = canvas.width
-        if (this.y > canvas.height) this.y = 0
-        if (this.y < 0) this.y = canvas.height
+        if (this.x > this.c.width) this.x = 0
+        if (this.x < 0) this.x = this.c.width
+        if (this.y > this.c.height) this.y = 0
+        if (this.y < 0) this.y = this.c.height
       }
 
       draw() {
@@ -54,7 +57,7 @@ export default function Hero() {
 
     const particles: Particle[] = []
     for (let i = 0; i < 80; i++) {
-      particles.push(new Particle())
+      particles.push(new Particle(canvas))
     }
 
     function animate() {
