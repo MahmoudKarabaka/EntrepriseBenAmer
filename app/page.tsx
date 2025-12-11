@@ -8,6 +8,7 @@ import Contact from '@/components/Contact'
 import Map from '@/components/Map'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Videos from '@/components/Videos'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <About />
       <Gallery />
+      <Videos />
       <Testimonials />
       <CTA />
       <Map />
