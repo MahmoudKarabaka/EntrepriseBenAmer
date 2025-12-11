@@ -68,10 +68,13 @@ export default function About() {
                   if (placeholder) placeholder.style.display = 'flex'
                 }}
               />
-              <div className="hidden w-full h-full bg-gradient-to-br from-primary/20 to-dark-secondary items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">⚙️</div>
-                  <p className="text-white text-lg">Image de l'atelier</p>
+              <div
+                className="hidden relative w-full h-full bg-cover bg-center items-center justify-center"
+                style={{ backgroundImage: "url('/images/about/atelier-cover.png')" }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-dark/30 to-dark/50" />
+                <div className="relative text-center text-white">
+                  <div className="text-lg font-semibold">Image de l&apos;atelier</div>
                 </div>
               </div>
             </div>
